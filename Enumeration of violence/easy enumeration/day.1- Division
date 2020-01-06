@@ -1,4 +1,4 @@
-**Input positive integer n,output expression like abcde/fghij =n from small to large**
+Input positive integer n,output expression like abcde/fghij =n from small to large
 therein the a~j just is the arrange of 0~9,2<=n<=79.
 
 input
