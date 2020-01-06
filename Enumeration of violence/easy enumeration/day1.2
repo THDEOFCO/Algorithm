@@ -1,0 +1,51 @@
+input s subcequence which include n elements ,you need find a constant subsequence which is the maximum product.
+if the product is the negative number, you should output 0(expresion no solution) 1<=N<=18,-10<=S(i)<=10.
+input:
+3
+2 4 -3
+5
+2 5 -1 2 -1
+
+output
+8
+20
+
+Analyze
+count the number of negative ,if the number is even number ,the situation is simple ,just product all numbers.
+if the number is odd number ,find the last nagetive,record it ,then product all numbers before it.
+lastly if number equal the n and the n is the odd number , output 0
+ 
+MY code
+include<stdio.h>
+int main(){
+int n,mul=1,count=0;
+int s[maxn];
+while(scanf("%d",&n)==1&&n){
+for(int i=0;i<n;i++){
+    scanf("%d",&s[i]);
+    if(s[i]<=0) count++;
+}
+
+if(count%2==0){
+    for(int i=0;i<n;i++)
+    mul*=s[i];
+    printf("%d",mul);
+    }
+if(count%2==1&&count!=1){
+        int x;
+    for(int i=n;i>0;i--)
+   if(s[i]<0) {x=i;break;}
+   for(int j=0;j<x;j++)
+    mul*=s[j];
+    printf("%d",mul);
+    for(int j=x+1;j<n;j++)
+}
+if(count==n&&n%2==1)
+printf("%d",0);
+}
+   return 0;
+}
+
+Summary
+the process of realize is no trouble ,but trouble is what the connect between this problem and enumration.
+the obtain form the problem is a little to me
