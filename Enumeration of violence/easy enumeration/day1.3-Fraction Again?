@@ -1,0 +1,54 @@
+input positive number k,find all numbers x>=y,let 1/k=1/x+1/y.
+
+input 
+2
+12
+
+output
+2
+1/2 = 1/6 + 1/3
+1/2 = 1/4 + 1/4
+8
+1/12 =1/156 + 1/13
+1/12 =1/84 + 1/14
+1/12 =1/60+ 1/15
+1/12 =1/48 + 1/16
+1/12 =1/36 + 1/18
+1/12 =1/30 + 1/20
+1/12 =1/28 + 1/21
+1/12 =1/24 + 1/24
+
+Analyze
+the  x is form 2k to (k+1)*k,and the y from k+1 to 2k;find the ranges,then enumerate the suitable situation,this problem is easy.
+but when I realize this code ,I meet three problems.
+First,because of the output,I need count the number of fitting the equation,then put out it,but when I meet a fitable situation 
+I should output the equation at once,that means,one need store,then output,one need output at once.
+so I ues double for regulations,maybe it is complex,but I haven't a better way.
+Second,when I first run the code , it print all equation,I mean ,the code doesn't judge the fitable situations,then I realize the fraction
+1/2 is equal 0,so I correct the fraction,1.0/2.
+third,the first example can run successfully by my correcting,but when it come to the second example,it has reduced three situations.
+just output five,I can't solve this problem
+
+My code
+
+include<stdio.h>
+int main(){
+ int k;
+ int count=0;
+ while(scanf("%d",&k)==1&&k){
+
+for(int i=k+1;i<=2*k;i++)
+    for(int j=(k+1)*k;j>=2*k;j--)
+    if(1.0/k==1.0/j+1.0/i){
+    count++;
+    break;}
+    printf("%d\n",count);
+    
+for(int i=k+1;i<=2*k;i++)
+    for(int j=(k+1)*k;j>=2*k;j--)
+    if(1.0/k==1.0/j+1.0/i){
+    printf("1/%d = 1/%d + 1/%d\n",k,j,i);break;}
+	
+ }
+ return 0;
+	}
