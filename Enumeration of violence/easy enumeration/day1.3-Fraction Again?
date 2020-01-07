@@ -52,3 +52,8 @@ for(int i=k+1;i<=2*k;i++)
  }
  return 0;
 	}
+
+Summeray
+for the first question, I can't find the samilr case on this problem in the internet,so I even don't know a easier way 
+for the third question, I find almost answers on internet avoid the division ,they gain the x by  knowing the range of y and k;
+so I guess the reason why my code can't run successfully maybe is division, so ,I think my basic knowledge is not strong. 
