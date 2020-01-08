@@ -23,5 +23,7 @@ void print_permutation(int n,int *a,int cur){
  
  the idea I understand is that put them in stack,for example,print_permutation(3,a,0).
  you can gain a[0]=1;then call the funcion,but last step hasn't finish,so all the information
- is put in stack,then the program continue,just like the preorder traveral tree
+ is put in stack,then the program continue,just like the preorder traveral of a tree.
+ 
+ the one of application of dfs is backtracking,now let us see the classic problem named Eight Queen
 
