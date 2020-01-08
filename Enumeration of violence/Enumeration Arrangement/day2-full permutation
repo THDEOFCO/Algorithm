@@ -1,0 +1,27 @@
+try to creat permutation 1~n
+
+in this section,I meet the first diffluct knowledge in Algorithm, Maybe I can understand the idea about dfs
+but I can't writte code by myself or can't understnd why code wrrited like this.
+the follwing is code about realize permuttation in the book
+
+void print_permutation(int n,int *a,int cur){
+
+ if(cur==n){
+    for(int i=0;i<n;i++)printf("%d",a[i]);
+    printf("\n");}
+    
+ else for(int i=1;i<=n;i++){
+    int ok=1;
+    for(int j=0;j<cur;j++)
+        if(a[j]==i) ok=0;
+    if(ok){
+        a[cur]=i;
+        print_permutation(n,a,cur+1);}
+ }
+
+ }
+ 
+ the idea I understand is that put them in stack,for example,print_permutation(3,a,0).
+ you can gain a[0]=1;then call the funcion,but last step hasn't finish,so all the information
+ is put in stack,then the program continue,just like the preorder traveral tree
+
