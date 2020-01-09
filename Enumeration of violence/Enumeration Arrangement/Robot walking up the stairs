@@ -1,0 +1,22 @@
+there is a square of x*y, a robot only can walk to right or down,from the upper left corner to the upper right corner.
+pleace create an algorithm to count the ways of robot.
+please input two positive interge numbers x,y,output the counts,guarantee x+y<=12.
+
+
+Analyze
+this idea is from small to large,from specific to normal.
+for example ,when x=y=1,there is one way,when x=1,y=2,the count is one,when x=2,y=1,the count is one as well
+then we can see,if x or y equal one ,there is always one way,because the robot only can walk to right or down.
+when x=y=2,it equal 1+1.then we can get a regulration,then we can write the code
+
+int walk(int x,int y){
+
+if(x==1||y==1)return 1;
+else
+return  walk((x-1),y)+walk(x,(y-1));
+
+}
+
+Summeray
+I think this idea is very important,from small to large ,from specific to normal.analyze the small number
+find the regularation.if I haven't the process of analyse,I  promise I can't write the simple code 
